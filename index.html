@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>explore.id</title>
+  <title>Explore.ID - Temukan Keindahan Indonesia</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
+
+  <header class="navbar" data-aos="fade-down">
     <div class="logo">Explore.ID</div>
     <nav>
       <ul>
@@ -19,124 +25,150 @@
     <button class="btn-login" onclick="openModal('login')">Login</button>
   </header>
 
-  <section class="hero">
+  <section class="hero" data-aos="fade-up">
     <h1>Jelajahi Keindahan Indonesia</h1>
-    <p>Temukan destinasi wisata terbaik pilihan kami</p>
+    <p>Temukan destinasi wisata terbaik pilihan kami di Explore.ID dan buat pengalaman perjalanan Anda lebih menyenankan.</p>
     <button class="btn-primary" onclick="document.getElementById('paket').scrollIntoView({behavior: 'smooth'})">Lihat Paket</button>
   </section>
 
-<!-- Paket Wisata -->
-<section class="paket-wisata" id="paket">
-  <h2>Paket Wisata</h2>
-  <div class="paket-container">
+  <section class="paket-wisata" id="paket">
+    <h2 data-aos="fade-up">Paket Wisata</h2>
+    <div class="paket-container">
+      <!-- Tambahkan data-aos dan delay ke tiap kartu -->
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="100">
+        <img src="img1/gambar1.jpg" alt="Raja Ampat">
+        <h3>Raja Ampat</h3>
+        <p>Surga bawah laut terbaik di Indonesia dengan pemandangan eksotis.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Raja Ampat')">Pesan Sekarang</button>
+      </div>
 
-    <div class="paket-card">
-      <img src="img1/gambar1.jpg" alt="Raja Ampat">
-      <h3>Raja Ampat</h3>
-      <p>Surga bawah laut terbaik di Indonesia dengan pemandangan eksotis.</p>
-      <button class="btn-secondary" onclick="pesanPaket('Raja Ampat')">Pesan Sekarang</button>
-    </div>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="img1/gambar2.jpg" alt="Labuan Bajo">
+        <h3>Labuan Bajo</h3>
+        <p>Temukan komodo, pulau eksotis, dan pesona matahari terbenam yang epik.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Labuan Bajo')">Pesan Sekarang</button>
+      </div>
 
-    <div class="paket-card">
-      <img src="img1/gambar2.jpg" alt="Labuan Bajo">
-      <h3>Labuan Bajo</h3>
-      <p>Temukan komodo, pulau eksotis, dan pesona matahari terbenam yang epik.</p>
-      <button class="btn-secondary" onclick="pesanPaket('Labuan Bajo')">Pesan Sekarang</button>
-    </div>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="img1/gambar3.jpg" alt="Dataran Tinggi Dieng">
+        <h3>Dataran Tinggi Dieng</h3>
+        <p>Spot sunrise terbaik dan pesona alam mistis di ketinggian.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Dieng')">Pesan Sekarang</button>
+      </div>
 
-    <div class="paket-card">
-      <img src="img1/gambar3.jpg" alt="Dataran Tinggi Dieng">
-      <h3>Dataran Tinggi Dieng</h3>
-      <p>Spot sunrise terbaik dan pesona alam mistis di ketinggian.</p>
-      <button class="btn-secondary" onclick="pesanPaket('Dieng')">Pesan Sekarang</button>
-    </div>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="img1/gambar4.jpg" alt="Bali">
+        <h3>Bali</h3>
+        <p>Surga wisata budaya dan pantai tropis yang memukau.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Bali')">Pesan Sekarang</button>
+      </div>
 
-    <div class="paket-card">
-      <img src="img1/gambar4.jpg" alt="Bali">
-      <h3>Bali</h3>
-      <p>Surga wisata budaya dan pantai tropis yang memukau.</p>
-      <button class="btn-secondary" onclick="pesanPaket('Bali')">Pesan Sekarang</button>
-    </div>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="500">
+        <img src="img1/gambar5.jpg" alt="Gunung Bromo">
+        <h3>Gunung Bromo</h3>
+        <p>Petualangan seru dengan sunrise menakjubkan di gunung berapi aktif.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Gunung Bromo')">Pesan Sekarang</button>
+      </div>
 
-    <div class="paket-card">
-      <img src="img1/gambar5.jpg" alt="Gunung Bromo">
-      <h3>Gunung Bromo</h3>
-      <p>Petualangan seru dengan sunrise menakjubkan di gunung berapi aktif.</p>
-      <button class="btn-secondary" onclick="pesanPaket('Gunung Bromo')">Pesan Sekarang</button>
-    </div>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="600">
+        <img src="img1/gambar6.jpg" alt="Nusa Penida">
+        <h3>Nusa Penida</h3>
+        <p>Pulau kecil dengan tebing dramatis dan air laut sejernih kristal.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Nusa Penida')">Pesan Sekarang</button>
+      </div>
 
-  </div>
-</section>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="700">
+        <img src="img1/gambar7.jpg" alt="Tana Toraja">
+        <h3>Tana Toraja</h3>
+        <p>Wisata budaya unik dengan rumah adat Tongkonan dan ritual megah.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Tana Toraja')">Pesan Sekarang</button>
+      </div>
 
-
-  </div>
-</section>
-
-
-
-<!-- Tentang Kami -->
-<section class="tentang" id="tentang">
-  <h2>Tentang Kami</h2>
-  <p>Kami adalah tim yang berdedikasi untuk memberikan pengalaman wisata terbaik di Indonesia. Website ini dikembangkan oleh:</p>
-
-  <div class="team-container">
-    
-    <!-- Anggota 1 -->
-    <div class="team-member">
-      <img src="img/anggota1.jpg" alt="Aulia Dwi Rahmawati">
-      <p>🌟 <strong>MOH. FAUZUL ADHIM</strong></p>
-      <p><em>Front-End Developer</em></p>
-    </div>
-
-    <!-- Anggota 2 -->
-    <div class="team-member">
-      <img src="img/anggota2.jpg" alt="Diah Ayu Lestari">
-      <p>🌟 <strong>RIFQI ZAKI AL SUHAIR</strong></p>
-      <p><em>UI/UX Designer</em></p>
-    </div>
-
-    <!-- Anggota 3 -->
-    <div class="team-member">
-      <img src="img/anggota3.jpg" alt="Wahyu Rizki Ramadhan">
-      <p>🌟 <strong>ELSAR HENDRI</strong></p>
-      <p><em>Basis Data</em></p>
-    </div>
-
-    <!-- Anggota 4 -->
-    <div class="team-member">
-      <img src="img/anggota4.jpg" alt="M. Faiz Rinaldi">
-      <p>🌟 <strong>M. Arif Setya Utama</strong></p>
-      <p><em>Admin Explore.ID</em></p>
-    </div>
-
-    <!-- Anggota 5 -->
-    <div class="team-member">
-      <img src="img/anggota5.jpg" alt="Putri Anindya Sari">
-      <p>🌟 <strong>DANDA OCTA</strong></p>
-      <p><em>Laporan Explore.id</em></p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-  <section class="kontak" id="kontak">
-    <h2>Hubungi Kami</h2>
-    <p>Email: exploreid@gmail.com</p>
-    <p>Telepon: +62 812-3456-7890</p>
-    <div class="maps-container">
-      <iframe src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+      <div class="paket-card" data-aos="zoom-in" data-aos-delay="800">
+        <img src="img1/gambar8.jpg" alt="Kawah Ijen">
+        <h3>Kawah Ijen</h3>
+        <p>Fenomena api biru langka dan danau asam yang memikat mata.</p>
+        <button class="btn-secondary" onclick="pesanPaket('Kawah Ijen')">Pesan Sekarang</button>
+      </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Wisata Indonesia. Semua Hak Dilindungi.
+  <section class="tentang" id="tentang" data-aos="fade-up">
+    <h2 data-aos="fade-up">Tentang Kami</h2>
+    <p>Kami adalah tim yang berdedikasi untuk memberikan pengalaman wisata terbaik di Indonesia. Website ini dikembangkan oleh:</p>
+    <div class="team-container">
+      <div class="team-member" data-aos="flip-left" data-aos-delay="100">
+        <img src="img/anggota1.jpg" alt="Aulia Dwi Rahmawati">
+        <p>🌟 <strong>MOH. FAUZUL ADHIM</strong></p>
+        <p><em>Front-End Developer</em></p>
+      </div>
+      <div class="team-member" data-aos="flip-left" data-aos-delay="200">
+        <img src="img/anggota2.jpg" alt="Diah Ayu Lestari">
+        <p>🌟 <strong>RIFQI ZAKI AL SUHAIR</strong></p>
+        <p><em>UI/UX Designer</em></p>
+      </div>
+      <div class="team-member" data-aos="flip-left" data-aos-delay="300">
+        <img src="img/anggota3.jpg" alt="Wahyu Rizki Ramadhan">
+        <p>🌟 <strong>ELSAR HENDRI</strong></p>
+        <p><em>Basis Data</em></p>
+      </div>
+      <div class="team-member" data-aos="flip-left" data-aos-delay="400">
+        <img src="img/anggota4.jpg" alt="M. Faiz Rinaldi">
+        <p>🌟 <strong>M. Arif Setya Utama</strong></p>
+        <p><em>Admin Explore.ID</em></p>
+      </div>
+      <div class="team-member" data-aos="flip-left" data-aos-delay="500">
+        <img src="img/anggota5.jpg" alt="Putri Anindya Sari">
+        <p>🌟 <strong>DANDA OCTA</strong></p>
+        <p><em>Laporan Explore.id</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontak" id="kontak" data-aos="fade-up">
+    <h2>Hubungi Kami</h2>
+    <p>Email: exploreid@gmail.com</p>
+    <p>Telepon: +62 812-3456-7890</p>
+
+    <button class="btn-contact" onclick="showToast('Terima kasih sudah menghubungi kami!')">Hubungi Kami</button>
+
+    <div class="maps-container" data-aos="zoom-in">
+      <iframe src="https://maps.google.com/maps?q=jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>Explore.ID</h3>
+        <p>Platform pemesanan wisata terpercaya untuk menjelajahi keindahan Indonesia.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#paket">Paket</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact">
+        <h4>Hubungi Kami</h4>
+        <p>Email: exploreid@gmail.com</p>
+        <p>Telp: +62 812-3456-7890</p>
+        <div class="socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Explore.ID | All rights reserved.
+    </div>
   </footer>
 
-  <!-- Modal Booking -->
+  <!-- MODALS (tetap tanpa animasi AOS) -->
   <div id="modal-booking" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('booking')">&times;</span>
@@ -149,7 +181,6 @@
     </div>
   </div>
 
-  <!-- Modal Login -->
   <div id="modal-login" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('login')">&times;</span>
@@ -161,7 +192,6 @@
     </div>
   </div>
 
-  <!-- Modal Register -->
   <div id="modal-register" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('register')">&times;</span>
@@ -174,5 +204,14 @@
   </div>
 
   <script src="script.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  </script>
+
 </body>
 </html>
