@@ -186,68 +186,116 @@ nav a:hover {
   background: #d35400;
 }
 
-/* Contact Form */
+/* ======= CONTACT FORM ======= */
 .contact-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  max-width: 500px;
+  gap: 20px; /* Menambah jarak antar elemen form */
+  max-width: 600px; /* Lebih lebar sedikit agar terlihat lebih luas */
   margin: 0 auto;
+  background: #f8f8f8; /* Memberikan background lembut pada form */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk kedalaman */
 }
 
 .contact-form input, .contact-form textarea {
   width: 100%;
   padding: 15px;
-  border-radius: 6px;
+  border-radius: 10px; /* Sudut lebih melengkung untuk kesan lebih modern */
   border: 1px solid #ccc;
   font-size: 16px;
   color: #333;
-  margin-bottom: 15px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi halus saat fokus */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Efek bayangan ringan */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #3498db; /* Border berubah menjadi biru saat fokus */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3); /* Efek glow biru saat fokus */
 }
 
 .contact-form textarea {
-  height: 150px;
+  height: 180px; /* Sedikit lebih tinggi untuk kenyamanan penulisan */
+  resize: none; /* Menonaktifkan resize agar tidak merusak layout */
 }
 
 .contact-form button {
-  padding: 12px 24px;
+  padding: 15px 30px;
   background: #2980b9;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.2s ease; /* Menambahkan transisi halus */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan ringan pada tombol */
 }
 
 .contact-form button:hover {
   background: #3498db;
+  transform: translateY(-3px); /* Efek tombol terangkat saat hover */
 }
 
-/* Maps Container */
+.contact-form button:active {
+  transform: translateY(0); /* Mengembalikan tombol saat ditekan */
+}
+
+/* Responsif pada layar kecil */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 20px;
+    max-width: 100%; /* Form lebih lebar pada layar kecil */
+  }
+
+  .contact-form button {
+    width: 100%; /* Tombol jadi penuh pada layar kecil */
+  }
+}
+
+
+/* ======= MAPS CONTAINER ======= */
+.maps-container {
+  position: relative;
+  overflow: hidden; /* Memastikan tidak ada elemen yang keluar dari batas container */
+  border-radius: 15px; /* Sudut lebih melengkung */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk kedalaman */
+}
+
 .maps-container iframe {
-  margin-top: 30px;
   width: 100%;
-  height: 300px;
+  height: 350px; /* Menjaga ukuran optimal */
   border: 0;
-  border-radius: 10px;
+  border-radius: 15px; /* Sudut lebih melengkung */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk efek zoom dan bayangan */
+}
+
+/* Efek hover dengan zoom */
+.maps-container iframe:hover {
+  transform: scale(1.05); /* Efek zoom in */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih intens */
 }
 
 /* ======= RESPONSIVE STYLES (Mobile View) ======= */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Align items center for better mobile view */
   }
 
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
   }
 
   .footer-container {
     flex-direction: column;
+    gap: 30px; /* Meningkatkan jarak antar elemen footer */
+    align-items: center; /* Align footer items to center */
   }
 
   .team-container {
@@ -256,55 +304,64 @@ nav a:hover {
   }
 
   .kontak {
-    padding: 40px 5%;
-  }
-
-  .contact-form {
-    width: 100%;
+    padding: 50px 10%; /* Menambah padding untuk view yang lebih luas */
   }
 
   .maps-container iframe {
-    height: 250px;
+    height: 280px; /* Mengurangi tinggi iframe sedikit pada mobile untuk lebih proporsional */
+  }
+}
+
+/* Responsif pada layar lebih kecil */
+@media (max-width: 480px) {
+  .maps-container iframe {
+    height: 250px; /* Menyesuaikan lagi tinggi iframe pada tampilan mobile sangat kecil */
   }
 }
 
 /* ======= TENTANG KAMI (About Us) ======= */
 .tentang {
-  padding: 60px 10%;
-  background: #fff;
+  padding: 80px 10%; /* Menambah padding untuk memberikan ruang lebih */
+  background: linear-gradient(135deg, #f5f5f5, #e2e2e2); /* Gradient background yang lembut */
   text-align: center;
 }
 
 .team-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Fleksibel dengan grid */
+  gap: 30px;
   justify-items: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .team-member {
-  background: #f1f1f1;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 200px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px; /* Sudut lebih melengkung */
+  max-width: 280px; /* Menyamaratakan ukuran lebar setiap item */
+  width: 100%; /* Menjaga lebar item agar responsif */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Menjaga gambar tetap di tengah */
+  justify-content: center; /* Menjaga gambar tetap di tengah */
 }
 
 .team-member img {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* Ukuran gambar disamakan */
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
 }
 
 .team-member h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .team-member p {
@@ -313,14 +370,23 @@ nav a:hover {
 }
 
 .team-member:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px); /* Efek hover dengan sedikit pergerakan */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih intens */
 }
+
+.team-member img:hover {
+  transform: scale(1.1); /* Efek zoom pada gambar anggota tim */
+}
+
 
 /* ======= FOOTER ======= */
 .footer {
   background: #2c3e50;
   color: #fff;
-  padding: 40px 10%;
+  padding: 50px 10%;
+  position: relative;
+  z-index: 100;
+  border-top: 4px solid #2980b9; /* Garis pemisah dengan warna biru */
 }
 
 .footer-container {
@@ -330,8 +396,11 @@ nav a:hover {
   justify-content: space-between;
 }
 
-.footer-section h4, .footer-section h3 {
+.footer-section h4,
+.footer-section h3 {
   margin-bottom: 16px;
+  font-size: 20px;
+  color: #ecf0f1;
 }
 
 .footer-section ul {
@@ -340,14 +409,26 @@ nav a:hover {
 }
 
 .footer-section a {
-  color: #fff;
+  color: #ecf0f1;
   text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #2980b9;
 }
 
 .socials a {
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 15px;
+  font-size: 25px;
   color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.1); /* Efek hover zoom */
+  color: #2980b9;
 }
 
 .footer-bottom {
@@ -355,7 +436,32 @@ nav a:hover {
   padding-top: 20px;
   font-size: 14px;
   color: #ccc;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
 }
+
+/* ======= ANIMATED FOOTER LINKS ======= */
+.footer-section a {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section a:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #2980b9;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.footer-section a:hover:before {
+  width: 100%;
+}
+
 
 /* ======= MODAL (Popup) ======= */
 .modal {
@@ -369,37 +475,50 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out; /* Animasi muncul */
 }
 
 .modal-content {
   background: #fff;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 40px;
+  border-radius: 15px;
   width: 90%;
-  max-width: 400px;
+  max-width: 450px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-50px);
+  animation: slideUp 0.4s ease-out; /* Animasi geser masuk */
 }
 
 .modal input {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.modal input:focus {
+  border-color: #2980b9;
+  outline: none;
 }
 
 .modal button {
-  padding: 10px 20px;
+  padding: 14px 28px;
   background: #2980b9;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%; /* Makes the button full-width */
+  width: 100%;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
 .modal button:hover {
@@ -410,29 +529,55 @@ nav a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  font-size: 24px;
+  font-size: 28px;
+  color: #2c3e50;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Centering the button within its container */
+.modal .close:hover {
+  color: #e74c3c;
+}
+
 .modal .form-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .modal .form-buttons button {
-  width: auto; /* The buttons will now center */
-  padding: 12px 24px;
+  width: auto;
+  padding: 14px 28px;
   background: #2980b9;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
   transition: background 0.3s ease;
 }
 
 .modal .form-buttons button:hover {
   background: #3498db;
+}
+
+/* ======= ANIMATIONS ======= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
